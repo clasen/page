@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLUB INDY</title>
+    <title>INDY CLUB</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         html,
@@ -48,7 +48,7 @@
             text-align: center;
             color: white;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.75s ease;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -90,7 +90,7 @@
     <div id="background"></div>
     <div id="container">
         <div id="content">
-            <h1>CLUB INDY</h1>
+            <h1>INDY CLUB</h1>
             <h2>Viernes 17/05</h2>
             
             <p>18:00h - 0:00h</p>
@@ -106,7 +106,7 @@
 
         function updateHue() {
             
-            hue = (hue + 10); // Incrementa más rápido el valor del hue
+            hue = (hue + 3); // Incrementa más rápido el valor del hue
 
             if (!contentVisible) {
                 background.style.filter = `hue-rotate(${hue}deg)`;
@@ -119,17 +119,14 @@
         function toggleContent() {
             contentVisible = !contentVisible;
             content.style.opacity = contentVisible ? 1 : 0;
-            
-            // background.style.filter = contentVisible ?  `hue-rotate(${hue}deg) blur(50px)` : `hue-rotate(${hue}deg) blur(0px)`;
             updateHue();
         }
 
         // Iniciar ciclo de hue
-        setTimeout(toggleContent, 1000);
+        setTimeout(toggleContent, 2000);
         updateHue();
         
 
-        // Agregar listener de clic para mostrar/ocultar contenido
         document.body.addEventListener('click', toggleContent);
     </script>
 
